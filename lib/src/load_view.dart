@@ -57,13 +57,6 @@ class _LoadImageWidgetState extends State<LoadImageWidget> {
   // ①Futureを定義
   Future<dynamic>? _data;
 
-  // int _counter = 0;
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
-
   @override
   initState() {
     super.initState();
@@ -126,7 +119,6 @@ class _LoadImageWidgetState extends State<LoadImageWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircularProgressIndicator(),
-                  // Text('$_counter', style: const TextStyle(fontSize: 24))
                 ],
               ),
             );
@@ -142,23 +134,7 @@ class _LoadImageWidgetState extends State<LoadImageWidget> {
           }
         },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
     );
   }
 
-  // Center contents(String data) {
-  //   return Center(
-  //     child: Column(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //         Text(data, style: const TextStyle(fontSize: 24)),
-  //         Text('$_counter', style: const TextStyle(fontSize: 24))
-  //       ],
-  //     ),
-  //   );
-  // }
 }
