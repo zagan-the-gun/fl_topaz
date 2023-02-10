@@ -190,8 +190,6 @@ class _ChangeFormState extends State<ChangeForm> {
       Navigator.push(
         context,
         MaterialPageRoute(
-            //builder: (context) => ArtViewScreen('paramText: value')),
-            // builder: (context) => ArtViewScreen(paramText: _filename)),
             builder: (context) => LoadViewScreen(paramText: _filename)),
       );
     }
