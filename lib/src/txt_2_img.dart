@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-import 'art_view.dart';
 import 'load_view.dart';
 
 class Txt2ImgScreen extends StatelessWidget {

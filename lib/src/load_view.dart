@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'dart:async'; // ← StreamController を使うために import する必要あり
@@ -72,7 +72,6 @@ class _LoadImageWidgetState extends State<LoadImageWidget> {
         title: Text('生成画像'),
         // title: Text(widget.paramText),
       ),
-
       body: FutureBuilder(
         // ③FutureBuilderに_dataを渡す
         // future: _data,
@@ -136,5 +135,4 @@ class _LoadImageWidgetState extends State<LoadImageWidget> {
       ),
     );
   }
-
 }
