@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.my_app">
+    package="com.TheMenZ.ai_topaz">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="my_app"
+        android:label="ai_topaz"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
