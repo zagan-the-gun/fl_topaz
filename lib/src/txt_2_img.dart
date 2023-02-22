@@ -14,10 +14,10 @@ class Txt2ImgScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AI Hokusai',
+      title: 'AI Topaz',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('AI Hokusai'),
+          title: Text('AI Topaz'),
           // 右側のアイコン
           // actions: <Widget>[
           //   IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
@@ -41,10 +41,10 @@ class _ChangeFormState extends State<ChangeForm> {
 
   String _prompt =
       "epic portrait An muscular waitress with short sleeved uniform carrying food, highly detailed, digital painting, artstation, concept art, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha";
-  String _seed = '3972771385';
+  String _seed = '3972771385'; //32bit乱数毎回入れた方が良いかも?
   String _n_iter = '1';
   String _scale = '7.0';
-  String _ddim_steps = '50';
+  String _ddim_steps = '32'; //64が良いかも？
   String _engine = 'sd';
   String _filename = '';
 
@@ -121,7 +121,7 @@ class _ChangeFormState extends State<ChangeForm> {
                   obscureText: false,
                   autovalidateMode: AutovalidateMode.disabled,
                   decoration: const InputDecoration(
-                    hintText: '精度',
+                    hintText: 'サイズ',
                     labelText: 'scale',
                   ),
                   validator: (value) {
@@ -139,7 +139,7 @@ class _ChangeFormState extends State<ChangeForm> {
                   obscureText: false,
                   autovalidateMode: AutovalidateMode.disabled,
                   decoration: const InputDecoration(
-                    hintText: '試行回数',
+                    hintText: '画像精度',
                     labelText: 'ddim_steps',
                   ),
                   validator: (value) {
