@@ -23,7 +23,7 @@ class Txt2ImgScreen extends StatelessWidget {
           //   IconButton(onPressed: () {}, icon: Icon(Icons.account_circle))
           // ]
         ),
-        body: Center(
+        body: SingleChildScrollView(
           child: ChangeForm(),
         ),
       ),
