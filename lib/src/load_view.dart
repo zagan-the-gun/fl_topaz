@@ -14,6 +14,7 @@ class LoadViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "AI Hokusai",
       home: LoadImageWidget(
         paramText: paramText,

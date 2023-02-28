@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+// import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
-//import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
 import 'load_view.dart';
+
+import 'dart:math';
 
 class Txt2ImgScreen extends StatelessWidget {
   const Txt2ImgScreen({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class Txt2ImgScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'AI Topaz',
       home: Scaffold(
         appBar: AppBar(
@@ -41,7 +44,9 @@ class _ChangeFormState extends State<ChangeForm> {
 
   String _prompt =
       "epic portrait An muscular waitress with short sleeved uniform carrying food, highly detailed, digital painting, artstation, concept art, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha";
-  String _seed = '3972771385'; //32bit乱数毎回入れた方が良いかも?
+  // String _seed = '3972771385'; //32bit乱数毎回入れた方が良いかも?
+  // String _seed = rng.nextInt(pow(2, 32).toInt() - 1);
+  String _seed = Random().nextInt(0x7FFFFFFF + 1).toString();
   String _n_iter = '1';
   String _scale = '7.0';
   String _ddim_steps = '32'; //64が良いかも？
@@ -174,14 +179,25 @@ class _ChangeFormState extends State<ChangeForm> {
         "scale": _scale,
         "ddim_steps": _ddim_steps,
       });
+      final headers = {
+        'Content-Type': 'application/json',
+        // 'Access-Control-Allow-Origin': 'true'
+      };
       try {
-        var response = await Dio()
-            .post('https://sd.tokyo-tsushin.com/api/txt2img', data: body);
+        print('DEAD BEEF 1');
+        var response = await Dio().post(
+            'https://sd.tokyo-tsushin.com/api/txt2img',
+            data: body,
+            options: Options(headers: headers));
         Map<String, dynamic> map = jsonDecode(response.toString());
+
+        // var response = await http.post(
+        //     Uri.parse('https://sd.tokyo-tsushin.com/api/txt2img'),
+        //     headers: headers,
+        //     body: body);
+        // Map<String, dynamic> map = jsonDecode(response.body.toString());
+
         _filename = map['filename'];
-        print('DEAD BEEF');
-        print(response);
-        print(response.runtimeType);
       } catch (e) {
         print(e);
       }
