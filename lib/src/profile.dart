@@ -24,6 +24,8 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Text('呪文は英語をスペース区切りで入力しましょう。',
                       style: TextStyle(fontSize: 18.0)),
+                  Text('単語をスペース区切りで入力するのでは無く、情感あふれる文章で入力しましょう。',
+                      style: TextStyle(fontSize: 18.0)),
                   Text('画像の生成にはかなりの時間がかかります、そのままお待ちください。',
                       style: TextStyle(fontSize: 18.0))
                 ],
